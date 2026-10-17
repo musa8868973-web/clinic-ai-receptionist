@@ -1,0 +1,15 @@
+# --- AI (OpenAI-compatible: OpenAI, Groq, LM Studio, Ollama) ---
+openai>=1.40.0
+
+# --- Google Calendar ---
+google-api-python-client>=2.130.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.2.0
+
+# --- Web frontend server ---
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+
+# --- Utilities ---
+python-dotenv>=1.0.1
+tzdata>=2024.1   # timezone data (needed on Windows)

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green Valley Family Clinic - Chat with reception</title>
+  <meta name="description" content="Ask questions or book an appointment with the Green Valley Family Clinic virtual receptionist.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230f766e'/%3E%3Cpath d='M41 22h18v19h19v18H59v19H41V59H22V41h19z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+
+    <!-- Left: the "front desk" board -->
+    <aside class="desk" aria-label="Clinic information">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="24" fill="currentColor"/><path d="M41 22h18v19h19v18H59v19H41V59H22V41h19z" fill="var(--desk-ink)"/></svg>
+        <div>
+          <h1>Green Valley<br>Family Clinic</h1>
+        </div>
+      </div>
+
+      <p class="desk-lead">Ask us anything, or pick a time for your visit. Our virtual receptionist is here around the clock.</p>
+
+      <section class="board" aria-labelledby="hours-title">
+        <h2 id="hours-title">Opening hours</h2>
+        <ul id="hours">
+          <li data-day="1"><span>Monday</span><span>9:00 AM - 5:00 PM</span></li>
+          <li data-day="2"><span>Tuesday</span><span>9:00 AM - 5:00 PM</span></li>
+          <li data-day="3"><span>Wednesday</span><span>9:00 AM - 5:00 PM</span></li>
+          <li data-day="4"><span>Thursday</span><span>9:00 AM - 5:00 PM</span></li>
+          <li data-day="5"><span>Friday</span><span>9:00 AM - 5:00 PM</span></li>
+          <li data-day="6"><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+          <li data-day="0" class="closed"><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </section>
+
+      <address class="contact">
+        12 Healthway Street, Downtown, Springfield<br>
+        <a href="tel:+15550102030">+1 (555) 010-2030</a>
+        <span class="emergency">Emergency line: <a href="tel:+15550109999">+1 (555) 010-9999</a></span>
+      </address>
+    </aside>
+
+    <!-- Right: the chat -->
+    <main class="chat" aria-label="Chat with the receptionist">
+      <header class="chat-head">
+        <div class="who">
+          <span class="avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z" fill="currentColor"/></svg>
+          </span>
+          <div>
+            <strong>Virtual receptionist</strong>
+            <small><span class="dot" aria-hidden="true"></span><span id="status-text">Online</span></small>
+          </div>
+        </div>
+        <button id="reset" class="ghost" type="button">New chat</button>
+      </header>
+
+      <div id="messages" class="messages" role="log" aria-live="polite" aria-label="Conversation"></div>
+
+      <div id="chips" class="chips" aria-label="Quick questions"></div>
+
+      <form id="composer" class="composer" autocomplete="off">
+        <label for="input" class="sr-only">Your message</label>
+        <textarea id="input" rows="1" maxlength="1000" placeholder="Type your question or say 'book an appointment'"></textarea>
+        <button id="send" type="submit" aria-label="Send message">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12 2-12 2z" fill="currentColor"/></svg>
+        </button>
+      </form>
+      <p class="fine">This assistant can't give medical advice. In an emergency, call your local emergency number.</p>
+    </main>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
